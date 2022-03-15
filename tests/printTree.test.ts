@@ -17,25 +17,11 @@ const filePathsList = [
   ["foo.ts", "bar", "bar/foo", "bar/foo/foo.ts", "bar/bar.ts"],
 ];
 
-describe("printTree-demo", () => {
- 
-    it("should visualize tree1", () => {
-      expect("\n" + printTree(filePathsList[0])).toMatchSnapshot();
+describe("printTree", () => {
+  filePathsList.forEach(function (filePaths, index) {
+    it("should visualize tree", () => {
+      expect("\n" + printTree(filePaths)).toMatchSnapshot();
     });
-    it("should visualize tree2", () => {
-      expect("\n" + printTree(filePathsList[1])).toMatchSnapshot();
-    });
-    it("should visualize tree3", () => {
-      expect("\n" + printTree(filePathsList[2])).toMatchSnapshot();
-    });
-    it("should visualize tree4", () => {
-      expect("\n" + printTree(filePathsList[3])).toMatchSnapshot();
-    });
-    it("should visualize tree5", () => {
-      expect("\n" + printTree(filePathsList[4])).toMatchSnapshot();
-    });
-    it("should visualize tree6", () => {
-      expect("\n" + printTree(filePathsList[5])).toMatchSnapshot();
-    });
+  })
 });
 
