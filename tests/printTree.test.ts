@@ -17,11 +17,10 @@ const filePathsList = [
   ["foo.ts", "bar", "bar/foo", "bar/foo/foo.ts", "bar/bar.ts"],
 ];
 
-describe("printTree", () => {
-  filePathsList.forEach(function (filePaths, index) {
+describe("Test printTree", () => {
+  filePathsList.forEach(filePaths => {
     it("should visualize tree", () => {
       expect("\n" + printTree(filePaths)).toMatchSnapshot();
     });
-  })
+  });
 });
-
